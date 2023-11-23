@@ -1,0 +1,35 @@
+@api = http://localhost:3000/Doctor 
+
+### Pedir Todos los doctores
+GET {{api}}
+
+### Crear Nuevo Doctor
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name": "xxxxx",
+    "last_name":"yyyyy",
+    "id_specialty": 2,
+    "cel": 545454
+}
+
+### Pedir 1
+GET {{api}}/5
+
+### Eliminar 1 mediante ID
+DELETE {{api}}/4
+
+### Contar Doctores
+GET {{api}}/count
+
+### Actualizar Doctores
+PUT {{api}}/5
+Content-Type: application/json
+
+{
+    "name": "JoseLuis",
+    "last_name":"Ramirez",
+    "id_specialty": 3,
+    "cel": 11111
+}

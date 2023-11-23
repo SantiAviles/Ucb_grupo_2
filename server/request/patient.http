@@ -1,0 +1,36 @@
+@api = http://localhost:3000/Patient 
+
+
+// Pedir Todos los datos
+GET {{api}}
+
+### Crear nuevo 
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name": "Ichurri",
+    "last_name": "Ontiveros",
+    "birthdate": "2010-12-16",
+    "cel": 12345678
+}
+
+### Pedir 1
+GET {{api}}/9
+
+### Eliminar
+DELETE {{api}}/8
+
+### Contar Pacientes
+GET {{api}}/count
+
+### Actualizar
+PUT {{api}}/9
+Content-Type: application/json
+
+{
+    "name": "Oscar",
+    "last_name": "Aviles",
+    "birthdate": "2010-12-16",
+    "cel": "87654321"
+}
