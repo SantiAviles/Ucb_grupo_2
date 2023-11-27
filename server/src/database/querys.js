@@ -19,3 +19,12 @@ export const queriesD = {
   updateDoctor:
     "UPDATE Medicos SET name = @name, last_name = @last_name, id_specialty = @id_specialty, cel = @cel WHERE medico_id = @medico_id",
 };
+
+export const queriesS = {
+  getAllSpecialties: "SELECT * FROM Especialidades",
+  addNewSpecialty: "INSERT INTO Especialidades (name) VALUES (@name)",
+  getSpeciatyById:
+    "SELECT * FROM Especialidades WHERE especialidad_id = @especialidad_id",
+  deleteSpecialty: "DELETE FROM Especialidades WHERE especialidad_id = @especialidad_id",
+  getTotalSpecialy: "SELECT COUNT(*) FROM Especialidades",
+};

@@ -1,0 +1,22 @@
+@api = http://localhost:3000/Specialty
+
+### Pedir Todas las especialidades
+GET {{api}}
+
+### Crear nueva Especialidad
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name": "Medico General"
+}
+
+### Mostrar 1
+GET {{api}}/5
+
+### Eliminar 1
+DELETE {{api}}/5
+
+### Contar Especialidades
+GET {{api}}/count
+

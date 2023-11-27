@@ -16,5 +16,6 @@ router.get("/Doctor/count", getTotalDoctors); // Contar Total
 router.get("/Doctor/:medico_id", getDoctorById); // Mostrar Solo 1
 router.delete("/Doctor/:medico_id", deleteDoctorById); // Eliminar
 router.put("/Doctor/:medico_id", updateDoctorById); // Actualizar
+router.get("Doctor/");
 
 export default router;
