@@ -9,6 +9,7 @@ export const queries = {
     "UPDATE Pacientes SET name = @name, last_name = @last_name, birthdate = @birthdate, cel = @cel WHERE paciente_id = @paciente_id",
 };
 
+//Doctors
 export const queriesD = {
   getAllDoctors: "SELECT * FROM Medicos",
   addNewDoctor:
@@ -20,11 +21,25 @@ export const queriesD = {
     "UPDATE Medicos SET name = @name, last_name = @last_name, id_specialty = @id_specialty, cel = @cel WHERE medico_id = @medico_id",
 };
 
+//Especialidades
 export const queriesS = {
   getAllSpecialties: "SELECT * FROM Especialidades",
   addNewSpecialty: "INSERT INTO Especialidades (name) VALUES (@name)",
   getSpeciatyById:
     "SELECT * FROM Especialidades WHERE especialidad_id = @especialidad_id",
-  deleteSpecialty: "DELETE FROM Especialidades WHERE especialidad_id = @especialidad_id",
+  deleteSpecialty:
+    "DELETE FROM Especialidades WHERE especialidad_id = @especialidad_id",
   getTotalSpecialy: "SELECT COUNT(*) FROM Especialidades",
+};
+
+//Citas Medicas
+export const queriesA = {
+  getAllAppointments: "SELECT * FROM CitasMedicas",
+  addNewAppointment:
+    "INSERT INTO CitasMedicas (dateTime, id_patient, id_doctor, id_specialty, observations) VALUES (@dateTime, @id_patient, @id_doctor, @id_specialty, @observations)",
+  getAppointmentById: "SELECT * FROM CitasMedicas WHERE cita_id = @cita_id",
+  deleteAppointment: "DELETE FROM CitasMedicas WHERE cita_id = @cita_id",
+  getTotalAppointment: "SELECT COUNT(*) FROM CitasMedicas",
+  updateAppointment:
+    "UPDATE CitasMedicas SET dateTime = @dateTime, id_patient = @id_patient, id_doctor = @id_doctor, id_specialty = @id_specialty, observations = @observations WHERE cita_id = @cita_id",
 };

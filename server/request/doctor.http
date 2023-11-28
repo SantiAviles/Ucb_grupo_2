@@ -8,10 +8,10 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "name": "xxxxx",
-    "last_name":"yyyyy",
-    "id_specialty": 2,
-    "cel": 545454
+    "name": "prueba",
+    "last_name":"iisi",
+    "id_specialty": 1,
+    "cel": 11111
 }
 
 ### Pedir 1

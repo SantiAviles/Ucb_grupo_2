@@ -1,11 +1,17 @@
 :root {
-  --blanco: #ffffff;
+  --blanco: #fafcfc;
+  --negro: #000000;
+  --oscuro: #212121;
+  --primario: rgb(1, 91, 101);
+  --primario2: rgb(134, 228, 218);
+  --secundario1: rgb(0, 173, 179);
+  --pistacho: rgb(199, 229, 222);
+  --gris: #5c5c60;
+  --grisClaro: rgb(173, 200, 205);
+  --grisClarisimo: rgb(195, 215, 218);
   --celeste1: #4a9cdd;
   --celeste2: #98d4fc;
   --celeste3: #4e89ac;
-  --primario: #1b3b6b;
-  --secundario: #84b0c4;
-  --gris: #324656;
 }
 
 html {
@@ -19,44 +25,89 @@ html {
 }
 body {
   font-size: 16px; /* 1rem = 10px */
-}
-
-.contenedor {
-  max-width: 120rem;
-  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  /*   background-image: linear-gradient(to top,var(--pistacho) 0%, var(--grisClarisimo) 100%); */
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 3.8rem;
 }
 h2 {
-  font-size: 2.8rem;
+  font-size: 3.8rem;
 }
 h3 {
   font-size: 1.8rem;
 }
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+.w-sm-100 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .w-sm-100 {
+      width: auto;
+  }
+}
+.flex {
+  display: flex;
+}
+
+.boton{
+  background-color: var(--primario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: .5rem;
+  width: 90%;
+  text-align: center;
+  border: none;
+}
+@media (min-width: 768px) {
+    .boton{
+      width: auto;
+    }
+}
+.boton {
+  cursor: pointer;
+}
+.flex{
+  display: flex;
+}
+.alinear-centro{
+  justify-content: center;
+}
 
 /* Header */
-/* .todo-header {
-  display: flex;
-  align-items: center;
-  background-color: var(--primario);
-} */
 .titulo span {
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
-.nv-principal {
+
+.nv-bg {
+  background-color: rgb(1 91 101 / 80%);
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: auto;
+}
+
+.nav-principal {
   display: flex;
   flex-direction: column;
 }
-
 @media (min-width: 768px) {
-  .nv-principal {
+  .nav-principal {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 }
-.nv-principal a {
+.nav-principal a {
   display: block;
   text-align: center;
   color: var(--blanco);
@@ -65,7 +116,163 @@ h3 {
   font-weight: bold;
   padding: 1rem;
 }
-.nv-principal a:hover{
-    background-color: var(--celeste2);
-    color: var(--gris);
+.nav-principal a:hover {
+  background-color: var(--secundario1);
+  color: var(--oscuro);
+}
+
+/* Primer section */
+.med-diff {
+  background-image: url(../img/emergency-room.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+.med-diff-contenedor {
+  position: absolute;
+  background-color: rgba(
+    195 215 218 / 30%
+  ); /*rgba(0 0 0 / 60%);/* rgba(195 215 218 / 70%); */
+  width: 100%;
+  height: 100%;
+}
+
+.med-diff-contenedor h2 {
+  color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+  }
+}
+
+.contenedor-a {
+  display: inline-block;
+  margin: auto;
+  vertical-align: middle;
+}
+.contenedor-a P {
+  font-size: 1.47rem;
+}
+.servicio {
+  background-color: rgba(0 173 179 / 50%);
+  width: min(35rem, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.servicio a {
+  color: var(--blanco);
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.servicio a:hover {
+  background-color: var(--secundario1);
+  color: var(--oscuro);
+}
+.servicio p {
+  line-height: 2;
+  text-align: center;
+}
+.servicio-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: rgba(173 200 205 / 50%);
+  background-image: linear-gradient(
+    to top,
+    var(--pistacho) 0%,
+    var(--blanco) 100%
+  );
+}
+.servicio2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sombra {
+  box-shadow: 0px 2px 50px 3px rgba(0, 0, 0, 0.87);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.especialidades{
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+}
+
+.especialidad a{
+  background-color: var(--primario);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+
+.campo label{
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+.input-text{
+  width: 100%;
+  border:none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+.campo{
+  margin-bottom: 1rem;
+}
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+.campo textarea {
+  height: 20rem;
+}
+.formulario {
+  background-color: var(--primario2);
+  width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.formulario fieldset {
+  border: none;
+}
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primario);
+}
+
+@media (min-width: 768px) {
+  .contenedor-campos {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto 20rem ;
+      column-gap: 1rem;
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+      grid-column: 1 / 3;
+  }
 }

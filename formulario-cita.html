@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Registrar Cita</title>
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Clinica <span>Los Olivos</span></h1>
+    </header>
+
+    <div class="nv-bg">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Especialidades</a>
+            <a href="formulario-cita.html">Pacientes</a>
+            <a href="#">Contacto</a>
+            <a href="#">Cita Medica</a>
+        </nav>
+    </div>
+
+    <h2>Registro de Paciente</h2>
+    <form class="formulario">
+        <fieldset>
+            <legend>Ingresa los datos del paciente</legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    <label>Nombre</label>
+                    <input class="input-text" type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label>Apellido</label>
+                    <input class="input-text" type="text" name="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="campo">
+                    <label>Fecha de Nacimiento</label>
+                    <input class="input-text" type="date" name="fecha_nacimiento" required>
+                </div>
+
+                <div class="campo">
+                    <label>Celular</label>
+                    <input class="input-text" type="tel" name="celular" placeholder="Celular" required>
+                </div>
+            </div>
+
+            <div class="alinear-centro flex">
+                <input class="boton w-sm-100" type="submit" value="Registrar Paciente">
+            </div>
+        </fieldset>
+    </form>
+</section>
+</body>
+</html>
