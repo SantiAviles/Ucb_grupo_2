@@ -1,0 +1,33 @@
+@api = http://localhost:3000/Treatment
+
+### Tratamientos totales
+GET {{api}}
+
+### Crear nuevo tratamiento
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name": "ZZZZ",
+    "description":"PPPP",
+    "cost": 111.123
+}
+
+### Mostrar 1
+GET {{api}}/3
+
+### Eliminar 1
+DELETE {{api}}/2
+
+### Contar Todos
+GET {{api}}/count
+
+### Actualizar tratamiento
+PUT {{api}}/3
+Content-Type: application/json
+
+{
+    "name": "Gotas para los ojos",
+    "description":"Aplicar 5 gotas por ojo 4 veces al dia ",
+    "cost": 100.00  
+}

@@ -6,7 +6,7 @@ import {
   getAppointments,
   getTotalAppointments,
   updateAppointmentById,
-} from "../controllers/Doc_appointment";
+} from "../controllers/Appointment.controller";
 
 const router = Router();
 

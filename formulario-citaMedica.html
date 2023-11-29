@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Cita Medica</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Clinica <span>Los Olivos</span></h1>
+    </header>
+
+    <div class="nv-bg">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Especialidades</a>
+            <a href="formulario-paciente.html">Pacientes</a>
+            <a href="formulario-medico.html">Medicos</a>
+            <a href="formulario-citaMedica.html">Cita Medica</a>
+        </nav>
+    </div>
+
+
+    <h2>Registro de Cita Médica</h2>
+    <form class="formulario sombra">
+        <fieldset>
+            <legend>Ingresa los datos </legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    <label>Fecha de la cita</label>
+                    <input class="input-text" type="datetime-local" id="fecha_hora" placeholder="fecha-hora" required>
+                </div>
+
+                <div class="campo">
+                    <label>id Paciente</label>
+                    <input class="input-text" type="number" id="paciente" placeholder="Paciente" required>
+                </div>
+
+                <div class="campo">
+                    <label>id Doctor</label>
+                    <input class="input-text" type="number" id="doctor" placeholder="Doctor" required>
+                </div>
+
+                <div class="campo">
+                    <label>id especialidad</label>
+                    <input class="input-text" type="number" id="especialidad" placeholder="Especialidad" required>
+                </div>
+
+                <div class="campo">
+                    <label>Observaciones</label>
+                    <input class="input-text" type="text" id="observaciones" placeholder="Observaciones" required>
+                </div>
+
+                <div class="alinear-centro flex">
+                    <input class="boton w-sm-100" type="submit" onclick="submitForm()" value="Registrar Cita">
+                </div>
+        </fieldset>
+    </form>
+    <footer>
+        <h2>Nuestros servicios a tu alcance</h2>
+    </footer>
+
+    <script>
+        function submitForm() {
+            function getValues() {
+                return {
+                    "dateTime": document.getElementById("fecha_hora").value,
+                    "id_patient": document.getElementById("paciente").value,
+                    "id_doctor": document.getElementById("doctor").value,
+                    "id_specialty": document.getElementById("especialidad").value,
+                    "observations": document.getElementById("observaciones").value,
+                };
+            }
+
+            const url = "http://localhost:3000/Appointments";
+            const method = "POST";
+            const headers = {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            };
+            const body = JSON.stringify(getValues());
+            const metadata = { method, headers, body };
+            fetch(url, metadata)
+                .then(Response => Response.json())
+                .then(Response => console.log(JSON.stringify(Response)));
+        }
+    </script>
+</body>
+
+</html>

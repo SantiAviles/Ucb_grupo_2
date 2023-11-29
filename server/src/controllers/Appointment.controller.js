@@ -86,7 +86,8 @@ export const updateAppointmentById = async (req, res) => {
     dateTime == null ||
     id_patient == null ||
     id_doctor == null ||
-    id_specialty == null
+    id_specialty == null ||
+    observations == null
   ) {
     return res.status(400).json({ msg: "Bad Request. Plese Fill all fields" });
   }

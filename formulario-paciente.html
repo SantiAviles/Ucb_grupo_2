@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Registrar Cita</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Clinica <span>Los Olivos</span></h1>
+    </header>
+
+    <div class="nv-bg">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Especialidades</a>
+            <a href="formulario-paciente.html">Pacientes</a>
+            <a href="formulario-medico.html">Medicos</a>
+            <a href="formulario-citaMedica.html">Cita Medica</a>
+        </nav>
+    </div>
+
+    <h2>Registro de Paciente</h2>
+    <form class="formulario sombra">
+        <fieldset>
+            <legend>Ingresa los datos del paciente</legend>
+            <div class="contenedor-campos">
+                <div class="campo">
+                    <label>Nombre</label>
+                    <input class="input-text" type="text" id="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label>Apellido</label>
+                    <input class="input-text" type="text" id="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="campo">
+                    <label>Fecha de Nacimiento</label>
+                    <input class="input-text" type="date" id="fecha_nacimiento" required>
+                </div>
+
+                <div class="campo">
+                    <label>Celular</label>
+                    <input class="input-text" type="tel" id="celular" placeholder="Celular" required>
+                </div>
+            </div>
+
+            <div class="alinear-centro flex">
+                <input class="boton w-sm-100 sombra2" type="submit" onclick="submitForm()" value="Registrar Paciente">
+            </div>
+        </fieldset>
+    </form>
+    </section>
+
+    <footer>
+        <h2>Nuestros servicios a tu alcance</h2>
+    </footer>
+
+    <script>
+        function submitForm() {
+            function getValues() {
+                return {
+                    "name": document.getElementById("nombre").value,
+                    "last_name": document.getElementById("apellido").value,
+                    "birthdate":  document.getElementById("fecha_nacimiento").value,
+                    "cel":  document.getElementById("celular").value,
+                };
+            }
+
+            const url = "http://localhost:3000/Patient";
+            const method = "POST";
+            const headers = {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            };
+            const body = JSON.stringify(getValues());
+            const metadata = { method, headers, body };
+            fetch(url, metadata)
+                .then(Response => Response.json())
+                .then(Response => console.log(JSON.stringify(Response)));
+        }  
+    </script>
+
+</body>
+
+</html>

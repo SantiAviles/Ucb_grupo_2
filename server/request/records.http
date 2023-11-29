@@ -1,0 +1,33 @@
+@api = http://localhost:3000/MedicalRecord
+
+### Mostrar Todos
+GET {{api}}
+
+### Crear nuevo
+POST {{api}}
+Content-Type: application/json
+
+{
+    "id_patient": 1,
+    "cons_date": "2023-12-25",
+    "diagnosis": "Tiene frio"
+}
+
+### Mostrar 1
+GET {{api}}/4
+
+### Eliminar 1
+DELETE {{api}}/3
+
+### Contar total
+GET {{api}}/count
+
+### Actualizar 1
+PUT {{api}}/4
+Content-Type: application/json
+
+{
+    "id_patient": 1,
+    "cons_date": "2023-12-26",
+    "diagnosis": "Tiene Calor" 
+}
